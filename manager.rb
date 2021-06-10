@@ -24,6 +24,7 @@ employee1.print_info
 employee2.print_info
 
 class Manager < Employee
+
   def initialize(input_options)
     super
     @employees = input_options[:employees]
@@ -40,8 +41,16 @@ class Manager < Employee
     @employees.each do |employee|
       employee.give_annual_raise
     end
+  end
+
+  def fire_all_employees
+    p "firiing employees"
+    @employees.each do |employee|
+      employee.active = false
+    end
 
   end
+
 end
 
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
@@ -49,6 +58,7 @@ manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000
 # manager.send_report
 
 manager.give_all_raises 
+manager.fire_all_employees  
 
-employee1.print_info
-employee2.print_info
+p employee1
+p employee2
