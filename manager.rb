@@ -36,15 +36,19 @@ class Manager < Employee
   end
 
   def give_all_raises
-    salary = salary * 1.05
+    p "giving all raises"
+    @employees.each do |employee|
+      employee.give_annual_raise
+    end
+
   end
 end
 
 manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
-manager.print_info
-manager.send_report
+# manager.print_info
+# manager.send_report
 
 manager.give_all_raises 
 
-p employee1
-p employee2
+employee1.print_info
+employee2.print_info
