@@ -36,7 +36,7 @@ class Manager < Employee
   end
 
   def give_all_raises
-    @salary = 1.05 * @salary
+    salary = salary * 1.05
   end
 end
 
@@ -44,5 +44,7 @@ manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000
 manager.print_info
 manager.send_report
 
-#This give the manager a raise
-# p manager.give_all_raises  
+manager.give_all_raises 
+
+p employee1
+p employee2
